@@ -1,11 +1,13 @@
 
-
-
+import Chai from "./chai"
 function App() {
   
 
   return (
-    <h1>Start react with vite by hitesh sir.</h1>
+    <>
+    <h1>So to rapping this process is called Fregament</h1>
+    <Chai/>
+    </>
   )
 }
 
