@@ -8,11 +8,24 @@ function Anotherapp(){
     <h1>Discode is the best pleace to discussion {username}</h1>
   )
 }
+//create element without jsx.
+const Reactelement = React.createElement(
+  'a',
+  {
+    href:"https://google.com",
+    target:"_blank"
+  },
+  "click me to vist google",
+  
+)
+// console.log(Reactelement);
+
 
 
 ReactDOM.createRoot(document.getElementById('root'))
 .render(
-  <React.StrictMode>  
-    <Anotherapp/>
-  </React.StrictMode>,
+  
+    
+    Reactelement
+
 )
