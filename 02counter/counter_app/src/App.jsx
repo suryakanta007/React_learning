@@ -11,6 +11,13 @@ function App() {
  let addValue = ()=>{
   counter++;
   setCounter(counter);
+
+
+  // a basic react interview question:-
+  // setCounter((prevCount)=>(prevCount+1));
+  // setCounter((prevCount)=>(prevCount+1));
+  // setCounter((prevCount)=>(prevCount+1));
+  // setCounter((prevCount)=>(prevCount+1));
   
  };
  let removeValue = ()=>{
