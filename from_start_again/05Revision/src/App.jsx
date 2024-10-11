@@ -34,7 +34,7 @@ function App() {
           readOnly
         />
         <button className="px-3 py-2 bg-blue-500 text-white rounded-md ">
-          Copy
+          Copy text
         </button>
       </div>
       <div className="max-w-md mx-auto flex w-full">
