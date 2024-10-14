@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback,useEffect,useRef } from "react";
 import "./App.css";
 
 function App() {
@@ -6,6 +6,7 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charterAllowed, setCharterAllowed] = useState(false);
   const [password, setPassword] = useState("");
+  const passwordRef = useRef(null);
 
   const generatePassword = useCallback(() => {
     let pass = "";
@@ -22,7 +23,11 @@ function App() {
     }
     setPassword(pass);
   }, [length, numberAllowed, charterAllowed]);
-
+  const copyPasswordToClipbord = useCallback(()=>{
+    passwordRef.current?.select();
+    window.navigator.clipboard.writeText(password)
+  },[password])
+  useEffect(()=> generatePassword(),[length,numberAllowed,charterAllowed,generatePassword])
   return (
     <>
       <h1 className="text-white bg-gray-800">Hello React!</h1>
@@ -32,8 +37,9 @@ function App() {
           className="w-full outline-none p-3 rounded-md"
           value={password}
           readOnly
+          ref={passwordRef}
         />
-        <button className="px-3 py-2 bg-blue-500 text-white rounded-md ">
+        <button className="px-3 py-2 bg-blue-500 text-white rounded-md " onClick={copyPasswordToClipbord}>
           Copy text
         </button>
       </div>
@@ -48,26 +54,26 @@ function App() {
               setLength(e.target.value);
             }}
           />
-          <label> length{length}</label>
+          <label> length:{length}</label>
         </div>
-        <div>
+        <div className="text-orange-500">
           <input
             type="checkbox"
             className=""
             value={numberAllowed}
             onChange={() => {
-              setNumber((prev) => !prev);
+              setNumberAllowed((prev) => !prev);
             }}
           />
           <label>Number</label>
         </div>
-        <div>
+        <div className="text-orange-500">
           <input
             type="checkbox"
             className=""
             value={charterAllowed}
             onChange={() => {
-              setCharter((prev) => !prev);
+              setCharterAllowed((prev) => !prev);
             }}
           />
           <label>Charter</label>
