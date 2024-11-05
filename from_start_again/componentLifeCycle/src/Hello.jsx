@@ -7,6 +7,7 @@ function Hello() {
     <>
     <input type="text" value={item} onChange={(e)=>setItem(e.target.value)}/>
     <div>Hello ,{item}</div>
+    <div>Hye</div>
     </>
   )
 }
