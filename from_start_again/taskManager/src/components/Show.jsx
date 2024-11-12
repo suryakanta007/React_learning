@@ -16,12 +16,12 @@ function Show({taskList,setTaskList}) {
         <ul>
             {taskList.map((task) => (
 
-                <>
+            
                     <li key={task.id}>
                         <p>{task.taskName}</p>
                         <p><button>Edit</button> <button onClick={()=>{removeTask(task.id)}}>Delete</button></p>
                     </li>
-                </>
+                
 
             ))}
 
