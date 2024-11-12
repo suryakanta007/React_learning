@@ -13,6 +13,7 @@ function App() {
     })
   }
   function removeTodo(todoId){
+    console.log(todoId)
     setTodos((todo)=>{
       return todo.filter((currTodo)=>currTodo.id!==todoId)
     })
